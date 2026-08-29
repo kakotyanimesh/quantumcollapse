@@ -1,0 +1,82 @@
+---
+title: "Introduction to Superposition"
+description: "The color-and-hardness electron experiment that shows why particles can't just have hidden definite values — and why we need superposition."
+date: "2026-08-30"
+topic: "Quantum Mechanics"
+tags: ["superposition", "measurement", "uncertainty principle"]
+---
+
+*Notes based on MIT 8.04 Quantum Mechanics I (Spring 2013), Prof. Allan Adams — Lecture 1.*
+
+## Two made-up properties: color and hardness
+
+Take electrons. Give them two properties, invented purely for this discussion:
+
+- **Color**, which can only ever be measured as **black** or **white**
+- **Hardness**, which can only ever be measured as **hard** or **soft**
+
+A "box" exists that measures either property — feed electrons in, and they come out one of two sides depending on the value measured. (In the real experiment this is a Stern-Gerlach-style magnet splitting a beam; the names "color" and "hardness" are just stand-ins so we don't get distracted by the physical mechanism.)
+
+## Property 1 — repeatability
+
+If you measure color and get "black," then immediately measure color again, you get "black" again. Measurements of the *same* property are repeatable — no surprises yet.
+
+## Property 2 — color and hardness are uncorrelated
+
+Here's the first strange part. Take electrons that were just measured to be **soft**, and now measure their color. You'd expect maybe some pattern based on hardness. Instead:
+
+- Exactly half come out black, half come out white
+- The same is true in reverse — measuring hardness on electrons known to be black gives 50/50 hard/soft
+
+No hidden variable predicts which way any individual electron will go. Color and hardness appear completely uncorrelated.
+
+## The paradox: measuring one property disturbs the other
+
+Now chain three boxes: **hardness → color**, feeding in electrons already known to be **white**.
+
+1. White electrons go into a hardness box → 50% hard, 50% soft (as expected)
+2. Take only the **soft** ones — they're white *and* soft
+3. Feed them into a color box
+4. Since color is repeatable, and we already know they're white, we'd expect **100% white, 0% black**
+
+**This prediction is wrong.** The actual result is 50% white, 50% black — as if the hardness measurement erased the fact that they were white at all.
+
+This isn't a measurement flaw. No hidden property distinguishes which electrons "flip" — every material and method gives the exact same 50/50 split, accurate to better than 1 part in 10¹⁰. You cannot build a box that measures hardness *without* scrambling color, or vice versa. This is the **uncertainty principle**: some pairs of properties simply cannot both have definite values at the same time.
+
+## Recombining paths: it gets weirder
+
+Now add mirrors that redirect and **recombine** the hard and soft paths after a hardness box, with no measurement happening in between.
+
+| Input | Steps | Measure | Result |
+|---|---|---|---|
+| White | split by hardness → recombine | hardness | 50% hard / 50% soft ✅ expected |
+| Hard | split by hardness → recombine | color | 50% black / 50% white ✅ expected |
+| White | split by hardness → recombine | **color** | **100% white** ⚠️ unexpected |
+
+The third row is the key result. Naively: half the electrons take the hard path (later measuring 50/50 color), half take the soft path (also 50/50 color) — so overall it should still be 50/50 black/white. Instead, recombining the two paths **restores** the original white color perfectly, as if the hardness "detour" never happened.
+
+## Blocking a path breaks the recovery
+
+Add an absorptive wall that can block one path. Send in white electrons, block the **soft** path, measure color at the end:
+
+- Output intensity drops by half (as expected — half the electrons are blocked)
+- But now the surviving electrons are **50% black, 50% white** again — the clean recovery from before is gone
+
+Blocking *either* path (hard or soft) produces the same 50/50 scrambled result. Simply knowing which path was physically possible — without ever measuring it — changes the outcome.
+
+## So what path did the electron take?
+
+Consider a single white electron entering the apparatus with both walls open, walls out, that comes out white with certainty. Which path did it take?
+
+- **Just the hard path?** No — that path alone gives 50/50 color.
+- **Just the soft path?** No — same problem.
+- **Both paths?** No — a single electron is never measured on two paths at once.
+- **Neither path?** No — blocking both paths kills the output entirely.
+
+None of the classical options work. The electron isn't on one path, both paths, or no path — it's in a **superposition** of the hard and soft paths, and interferes with itself when the paths are recombined without being measured.
+
+## The takeaway
+
+An electron that measures as white is not secretly hard, secretly soft, or "really" something we just can't observe. It exists in a superposition of hard and soft, and that superposition is disturbed the moment either alternative is definitely measured — collapsing it into a 50/50 mixture instead of restoring interference.
+
+This is not a limitation of measurement technology. It's a real feature of how quantum systems behave, at odds with any intuition built from throwing spears or making toast. Making that intuition rigorous — replacing "we have no clue what's going on" with an actual mathematical language — is the point of quantum mechanics.
