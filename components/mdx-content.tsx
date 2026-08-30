@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import rehypeKatex from "rehype-katex";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
+import { MdxImage } from "@/components/mdx-image";
 
 const components = {
   h2: (props: ComponentProps<"h2">) => (
@@ -83,6 +84,13 @@ const components = {
   tr: (props: ComponentProps<"tr">) => (
     <tr className="last:[&>td]:border-b-0" {...props} />
   ),
+  img: (props: ComponentProps<"img">) => (
+    <MdxImage
+      src={typeof props.src === "string" ? props.src : ""}
+      alt={props.alt ?? ""}
+    />
+  ),
+  Image: MdxImage,
 };
 
 export function MdxContent({ source }: { source: string }) {
